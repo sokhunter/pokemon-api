@@ -1,0 +1,12 @@
+version: '3'
+services:
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      - 27017:27017 #puerto de la pc / puerto de docker
+    environment:
+      MONGODB_DATABASE: nest-pokemon
+    volumes:
+      - ./mongo:/data/db # Para hacer persistente la data, creará la carpeta ./mongo
+      
